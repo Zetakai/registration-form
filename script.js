@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to show modal
     function showModal(message) {
-        popupMessage.textContent = message;
+        popupMessage.innerHTML = message;
         modal.style.display = 'block';
     }
     
@@ -27,23 +27,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
+    // Function to convert numeric grade to letter grade
+    function convertToLetterGrade(nilai) {
+        if (nilai >= 90) return 'A';
+        if (nilai >= 80) return 'B';
+        if (nilai >= 70) return 'C';
+        if (nilai >= 60) return 'D';
+        return 'E';
+    }
+    
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
         const namaDepan = document.getElementById('namaDepan').value.trim();
         const namaBelakang = document.getElementById('namaBelakang').value.trim();
+        const nilaiAngka = document.getElementById('nilaiAngka').value;
         
-        if (namaDepan && namaBelakang) {
+        if (namaDepan && namaBelakang && nilaiAngka) {
             const namaLengkap = namaDepan + ' ' + namaBelakang;
-            const message = 'Nama Lengkap : ' + namaLengkap;
+            const nilaiHuruf = convertToLetterGrade(parseInt(nilaiAngka));
+            
+            const message = `Nama Lengkap : ${namaLengkap}\nNilai Angka : ${nilaiAngka}\nNilai Huruf : ${nilaiHuruf}`;
             
             // Show in console log
             console.log(message);
             
+            // Create formatted message for popup with columns
+            const formattedMessage = `
+                <div style="text-align: left; font-family: monospace; line-height: 1.8;">
+                    <div><strong>Nama Lengkap :</strong> ${namaLengkap}</div>
+                    <div><strong>Nilai Angka :</strong> ${nilaiAngka}</div>
+                    <div><strong>Nilai Huruf :</strong> ${nilaiHuruf}</div>
+                </div>
+            `;
+            
             // Show in popup
-            showModal(message);
+            showModal(formattedMessage);
         } else {
-            const errorMessage = 'Mohon isi kedua field nama depan dan nama belakang!';
+            const errorMessage = 'Mohon isi semua field (nama depan, nama belakang, dan nilai angka)!';
             console.log(errorMessage);
             showModal(errorMessage);
         }

@@ -7,17 +7,27 @@
 - **Teknologi:** HTML5, CSS3, JavaScript (Vanilla)
 
 ## Deskripsi Proyek
-Aplikasi web form registrasi sederhana yang dibangun menggunakan teknologi front-end modern. Form ini memiliki desain yang clean dan user-friendly dengan popup modal yang elegan untuk menampilkan hasil input.
+Aplikasi web form registrasi dengan sistem penilaian yang dibangun menggunakan teknologi front-end modern. Form ini memiliki desain yang clean dan user-friendly dengan popup modal yang elegan untuk menampilkan hasil input dan konversi nilai.
 
 ## Fitur Utama
 
 ### Form Registrasi
 - **Nama Depan** - Field input untuk nama depan
 - **Nama Belakang** - Field input untuk nama belakang
+- **Nilai Angka** - Field input untuk nilai numerik (0-100)
 - **Submit Button** - Tombol untuk mengirim form
 
+### Sistem Penilaian
+- **Konversi Nilai** - Otomatis mengkonversi nilai angka ke huruf
+- **Skala Penilaian:**
+  - 90-100: A
+  - 80-89: B
+  - 70-79: C
+  - 60-69: D
+  - <60: E
+
 ### Fitur UI/UX
-- **Popup Modal** - Menampilkan hasil nama lengkap dalam modal yang elegan
+- **Popup Modal** - Menampilkan hasil dalam format kolom yang rapi
 - **Console Logging** - Menampilkan hasil di browser console
 - **Responsive Design** - Optimal di desktop dan mobile
 - **Smooth Animations** - Animasi halus untuk modal dan transisi
@@ -64,9 +74,13 @@ registration-form/
 
 1. **Masukkan Nama Depan** - Ketik nama depan Anda
 2. **Masukkan Nama Belakang** - Ketik nama belakang Anda
-3. **Klik Submit** - Tombol untuk mengirim form
-4. **Lihat Hasil** - Popup modal akan menampilkan "Nama Lengkap : [Nama Depan] [Nama Belakang]"
-5. **Console Log** - Buka Developer Tools (F12) untuk melihat log di console
+3. **Masukkan Nilai Angka** - Ketik nilai numerik (0-100)
+4. **Klik Submit** - Tombol untuk mengirim form
+5. **Lihat Hasil** - Popup modal akan menampilkan:
+   - Nama Lengkap : [Nama Depan] [Nama Belakang]
+   - Nilai Angka : [Nilai Angka]
+   - Nilai Huruf : [Nilai Huruf]
+6. **Console Log** - Buka Developer Tools (F12) untuk melihat log di console
 
 ## Fitur Teknis
 
@@ -77,9 +91,11 @@ registration-form/
 - **Responsive Design** - Modal yang responsif di berbagai ukuran layar
 
 ### Form Handling
-- **Input Validation** - Validasi sederhana untuk memastikan kedua field terisi
+- **Input Validation** - Validasi sederhana untuk memastikan semua field terisi
 - **Event Handling** - Event listener untuk form submission
 - **DOM Manipulation** - Manipulasi DOM untuk menampilkan hasil
+- **Grade Conversion** - Fungsi untuk mengkonversi nilai angka ke huruf
+- **HTML Formatting** - Format output dalam kolom yang rapi
 
 ### Performance
 - **Vanilla JavaScript** - No external dependencies
