@@ -1,4 +1,4 @@
-# Form Registrasi - Tugas Pemrograman Front-End
+# Form Registrasi Sederhana - Tugas Pemrograman Front-End
 
 ## Informasi Tugas
 - **Mata Kuliah:** Pemrograman Front-End
@@ -7,28 +7,27 @@
 - **Teknologi:** HTML5, CSS3, JavaScript (Vanilla)
 
 ## Deskripsi Proyek
-Aplikasi web form registrasi yang dibangun menggunakan teknologi front-end modern dengan fitur validasi real-time, toggle password visibility, dan desain responsif. Form ini dirancang dengan pendekatan user experience yang optimal dan antarmuka yang user-friendly.
+Aplikasi web form registrasi sederhana yang dibangun menggunakan teknologi front-end modern. Form ini memiliki desain yang clean dan user-friendly dengan popup modal yang elegan untuk menampilkan hasil input.
 
 ## Fitur Utama
 
 ### Form Registrasi
-- **Nama Lengkap** - Validasi minimum 2 karakter
-- **Alamat Email** - Validasi format email yang benar
-- **Password** - Minimum 6 karakter dengan indikator kekuatan
-- **Konfirmasi Password** - Validasi kesesuaian password
+- **Nama Depan** - Field input untuk nama depan
+- **Nama Belakang** - Field input untuk nama belakang
+- **Submit Button** - Tombol untuk mengirim form
 
 ### Fitur UI/UX
-- **Toggle Password Visibility** - Tombol show/hide untuk kedua field password
-- **Validasi Real-time** - Feedback langsung saat user mengetik
-- **Animasi Loading** - Indikator loading saat submit form
+- **Popup Modal** - Menampilkan hasil nama lengkap dalam modal yang elegan
+- **Console Logging** - Menampilkan hasil di browser console
 - **Responsive Design** - Optimal di desktop dan mobile
-- **Error Handling** - Pesan error yang informatif dalam Bahasa Indonesia
+- **Smooth Animations** - Animasi halus untuk modal dan transisi
+- **Clean Design** - Desain minimalis dengan color scheme yang hangat
 
 ### Desain
 - **Color Scheme** - Palet warna earthy (coklat/cream) yang hangat
 - **Typography** - Font serif (Georgia) untuk kesan klasik
 - **Animations** - Transisi halus dan efek hover
-- **Accessibility** - Kontras warna yang baik dan navigasi keyboard
+- **Modal Design** - Popup modal dengan animasi slide dan fade
 
 ## Teknologi yang Digunakan
 
@@ -36,15 +35,15 @@ Aplikasi web form registrasi yang dibangun menggunakan teknologi front-end moder
 |-----------|-------|-----------|
 | HTML5 | Latest | Struktur semantic dan form elements |
 | CSS3 | Latest | Styling, animations, dan responsive design |
-| JavaScript | ES6+ | Validasi form, event handling, dan DOM manipulation |
+| JavaScript | ES6+ | Event handling, DOM manipulation, dan modal control |
 
 ## Struktur File
 
 ```
 registration-form/
-├── index.html          # File HTML utama
-├── style.css           # Stylesheet dengan styling lengkap
-├── script.js           # JavaScript untuk validasi dan interaksi
+├── index.html          # File HTML utama dengan form sederhana
+├── style.css           # Stylesheet dengan styling dan modal
+├── script.js           # JavaScript untuk form handling dan modal
 └── README.md           # Dokumentasi proyek
 ```
 
@@ -52,7 +51,8 @@ registration-form/
 
 1. **Clone atau Download** repository ini
 2. **Buka file** `index.html` di web browser modern
-3. **Form siap digunakan** tanpa perlu server atau build process
+3. **Isi form** dengan nama depan dan nama belakang
+4. **Klik Submit** untuk melihat hasil dalam popup modal
 
 ### Persyaratan Browser
 - Chrome 60+
@@ -60,70 +60,38 @@ registration-form/
 - Safari 12+
 - Edge 79+
 
-## Responsive Breakpoints
+## Cara Penggunaan
 
-```css
-/* Mobile First Approach */
-@media (max-width: 600px) {
-    /* Styling untuk mobile devices */
-}
-```
+1. **Masukkan Nama Depan** - Ketik nama depan Anda
+2. **Masukkan Nama Belakang** - Ketik nama belakang Anda
+3. **Klik Submit** - Tombol untuk mengirim form
+4. **Lihat Hasil** - Popup modal akan menampilkan "Nama Lengkap : [Nama Depan] [Nama Belakang]"
+5. **Console Log** - Buka Developer Tools (F12) untuk melihat log di console
 
 ## Fitur Teknis
 
-### Validasi Form
-- **Client-side validation** dengan JavaScript
-- **Real-time feedback** dengan debouncing (500ms)
-- **Custom error messages** dalam Bahasa Indonesia
-- **Focus management** untuk accessibility
+### Modal System
+- **Custom Modal** - Modal buatan sendiri tanpa library eksternal
+- **Smooth Animations** - Animasi fade in dan slide down
+- **Multiple Close Options** - Bisa ditutup dengan X, tombol Tutup, atau klik luar modal
+- **Responsive Design** - Modal yang responsif di berbagai ukuran layar
 
-### Password Security
-- **Strength indicator** (5 level kekuatan)
-- **Toggle visibility** dengan icon yang intuitif
-- **Minimum length** dan pattern validation
+### Form Handling
+- **Input Validation** - Validasi sederhana untuk memastikan kedua field terisi
+- **Event Handling** - Event listener untuk form submission
+- **DOM Manipulation** - Manipulasi DOM untuk menampilkan hasil
 
 ### Performance
 - **Vanilla JavaScript** - No external dependencies
-- **Optimized CSS** - Minimal dan efficient
-- **Fast loading** - Lightweight implementation
+- **Lightweight CSS** - CSS yang efisien dan minimal
+- **Fast Loading** - Implementasi yang ringan dan cepat
 
-## Design Philosophy
-
-### Prinsip Desain
-1. **Simplicity** - Interface yang bersih dan tidak berlebihan
-2. **Accessibility** - Mudah digunakan oleh semua user
-3. **Consistency** - Pola desain yang konsisten
-4. **Feedback** - Respons yang jelas untuk setiap aksi user
-
-### Color Palette
+## Color Palette
 - **Primary:** #8b4513 (Saddle Brown)
 - **Secondary:** #a0522d (Sienna)
 - **Background:** #f5f1e8 (Warm White)
-- **Error:** #dc143c (Crimson)
-- **Success:** #228b22 (Forest Green)
-
-## Validasi Rules
-
-| Field | Rules | Error Message |
-|-------|-------|---------------|
-| Nama | Required, Min 2 chars | "Nama harus minimal 2 karakter" |
-| Email | Required, Valid format | "Format email tidak valid" |
-| Password | Required, Min 6 chars | "Password harus minimal 6 karakter" |
-| Confirm Password | Required, Match password | "Konfirmasi password tidak cocok" |
-
-## Developer Notes
-
-### Code Quality
-- **Clean Code** - Kode yang mudah dibaca dan dipahami
-- **Modular Structure** - Fungsi-fungsi yang terpisah dan reusable
-- **Error Handling** - Penanganan error yang comprehensive
-- **Performance** - Optimasi untuk loading yang cepat
-
-### Best Practices
-- Semantic HTML5 elements
-- CSS Grid/Flexbox untuk layout
-- Event delegation untuk performance
-- Progressive enhancement approach
+- **Modal Background:** #fff (White)
+- **Text:** #333 (Dark Gray)
 
 ## Kontak
 
